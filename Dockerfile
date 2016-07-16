@@ -8,7 +8,7 @@ ENV RUNTIME_DEPS bash build-base
 # install sensu-core and ruby plugins
 RUN apk add --no-cache $BUILD_DEPS $NOKOGIRI_DEPS $RUNTIME_DEPS \
     && gem install sensu -v ${SENSU_VERSION} \
-    && gem install nokogiri -- --use-system-libraries \
+    && gem install nokogiri \
     && gem install yaml2json \
     && apk del $BUILD_DEPS && rm -rf /var/cache/apk/*
 
