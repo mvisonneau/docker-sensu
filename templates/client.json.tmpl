@@ -1,10 +1,11 @@
+
 {
   "client": {
     "socket": {
       "bind": "{{ .CLIENT_BIND }}"
     },
-    "name": {{ default .HOSTNAME .CLIENT_NAME | quote }},
-    "address": {{ .CLIENT_ADDRESS | quote }},
+    "name": {{ default .CLIENT_NAME | quote }},
+    "address": {{ default .CLIENT_ADDRESS | quote }},
     "deregister":  {{ .CLIENT_DEREGISTER }},
     {{ if .CLIENT_SUBSCRIPTIONS }}
     "subscriptions": [

@@ -3,7 +3,7 @@ MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
 RUN \
     apt-get update &&\
-    apt-get install -y curl ca-certificates &&\ 
+    apt-get install -y curl ca-certificates &&\
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -s http://repositories.sensuapp.org/apt/pubkey.gpg | apt-key add -
@@ -36,13 +36,13 @@ COPY bin /bin/
 
 ENV DEFAULT_PLUGINS_REPO=sensu-plugins \
     DEFAULT_PLUGINS_VERSION=master \
-    
+
     #Client Config
     CLIENT_SUBSCRIPTIONS=all,default \
     CLIENT_BIND=127.0.0.0 \
     CLIENT_DEREGISTER=true \
 
-    #Common Config 
+    #Common Config
     RUNTIME_INSTALL='' \
     LOG_LEVEL=warn \
     CONFIG_FILE=/etc/sensu/config.json \
